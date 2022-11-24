@@ -1,4 +1,4 @@
-package com.example.userservice.entity;
+package com.example.userservice.user.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,7 +32,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String userstatus;
+    private String profile;
 
     private String field;
 
@@ -43,7 +43,7 @@ public class User {
         this.password = password;
         this.nickname = nickname;
         this.email = email;
-        this.userstatus = "비전공자";
+        this.profile = "비전공자";
     }
 
     public User(String username, String password, String nickname, String email, int year){
@@ -51,16 +51,16 @@ public class User {
         this.password = password;
         this.nickname = nickname;
         this.email = email;
-        this.userstatus = "대학생";
+        this.profile = "대학생";
         this.year = year;
     }
 
-    public User(String username, String password, String nickname, String email, String userstatus, String field ,int year){
+    public User(String username, String password, String nickname, String email, String profile, String field ,int year){
         this.username = username;
         this.password = password;
         this.nickname = nickname;
         this.email = email;
-        this.userstatus = userstatus;
+        this.profile = profile;
         this.field = field;
         this.year = year;
     }
