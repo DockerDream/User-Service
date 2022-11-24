@@ -39,28 +39,15 @@ public class User {
 
     private int year;
 
+    @Builder
     public User(String name, String email, String picture, Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
-        this.profile = "비전공자";
     }
 
-    public User(String name, String email, String picture, Role role, int year){
-        this.name = name;
-        this.email = email;
-        this.picture = picture;
-        this.role = role;
-        this.profile = "대학생";
-        this.year = year;
-    }
-
-    public User(String name, String email, String picture, Role role, String profile, String field ,int year){
-        this.name = name;
-        this.email = email;
-        this.picture = picture;
-        this.role = role;
+    public void updateProfile(String profile, String field, int year){
         this.profile = profile;
         this.field = field;
         this.year = year;
