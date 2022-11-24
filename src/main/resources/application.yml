@@ -15,6 +15,9 @@ spring:
         web-allow-others: true
       path: /h2-console
 
+  profiles:
+    include: oauth
+
 eureka:
   client:
     register-with-eureka: true
