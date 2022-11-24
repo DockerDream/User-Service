@@ -19,17 +19,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 30, unique = true)
-    private String username; // 아이디
-
-    @Column(nullable = false, length = 100)
-    private String password;
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false)
-    private String nickname;
-
-    @Column(nullable = false, length = 50)
     private String email;
+
+    @Column
+    private String picture;
+
+    @Enumerated
+    @Column(nullable = false)
+    private Role role;
 
     @Column(nullable = false)
     private String profile;
@@ -38,30 +39,41 @@ public class User {
 
     private int year;
 
-    public User(String username, String password, String nickname, String email){
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
+    public User(String name, String email, String picture, Role role){
+        this.name = name;
         this.email = email;
+        this.picture = picture;
+        this.role = role;
         this.profile = "비전공자";
     }
 
-    public User(String username, String password, String nickname, String email, int year){
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
+    public User(String name, String email, String picture, Role role, int year){
+        this.name = name;
         this.email = email;
+        this.picture = picture;
+        this.role = role;
         this.profile = "대학생";
         this.year = year;
     }
 
-    public User(String username, String password, String nickname, String email, String profile, String field ,int year){
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
+    public User(String name, String email, String picture, Role role, String profile, String field ,int year){
+        this.name = name;
         this.email = email;
+        this.picture = picture;
+        this.role = role;
         this.profile = profile;
         this.field = field;
         this.year = year;
+    }
+
+    public User update(String name, String picture) {
+        this.name = name;
+        this.picture = picture;
+
+        return this;
+    }
+
+    public String getRoleKey() {
+        return this.role.getKey();
     }
 }
