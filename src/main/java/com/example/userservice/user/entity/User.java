@@ -12,12 +12,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Builder
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String social;
 
     @Column(nullable = false)
     private String name;
@@ -40,8 +41,9 @@ public class User {
     private int year;
 
     @Builder
-    public User(String name, String email, String picture, Role role){
+    public User(String name, String social, String email, String picture, Role role){
         this.name = name;
+        this.social = social;
         this.email = email;
         this.picture = picture;
         this.role = role;
