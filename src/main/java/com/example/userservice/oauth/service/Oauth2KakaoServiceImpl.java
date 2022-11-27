@@ -23,16 +23,16 @@ public class Oauth2KakaoServiceImpl implements Oauth2KakaoService {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    @Value("${spring.security.oauth2.client.registration.kakao.client-id}")
+    @Value("${security.oauth2.client.registration.kakao.client-id}")
     private String kakaoOauth2ClinetId;
 
-    @Value("${spring.security.oauth2.client.registration.kakao.redirect-uri}")
+    @Value("${security.oauth2.client.registration.kakao.redirect-uri}")
     private String frontendRedirectUrl;
 
-    @Value("${spring.security.oauth2.client.provider.kakao.token_uri}")
+    @Value("${security.oauth2.client.provider.kakao.token-uri}")
     private String kakaoTokenUri;
 
-    @Value("${spring.security.oauth2.client.provider.kakao.user-info-uri}")
+    @Value("${security.oauth2.client.provider.kakao.user-info-uri}")
     private String kakaoUserInfoUri;
 
     @Override
