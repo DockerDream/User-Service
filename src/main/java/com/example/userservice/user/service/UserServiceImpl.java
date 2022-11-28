@@ -1,4 +1,4 @@
 package com.example.userservice.user.service;
 
-public interface UserService {
+public class UserServiceImpl {
 }
