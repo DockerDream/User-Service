@@ -2,6 +2,9 @@ server:
   port: 50010
 
 spring:
+  redis:
+    host: redis
+    port: 6379
   application:
     name: user-service
   datasource:
