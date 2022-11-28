@@ -2,15 +2,13 @@ package com.example.userservice.user.dto;
 
 import com.example.userservice.user.entity.Role;
 import com.example.userservice.user.entity.User;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @ToString
 @Builder(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Getter
 public class Oauth2AttributeDto {
     private String attributeKey;
