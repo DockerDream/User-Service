@@ -1,29 +1,30 @@
 package com.example.userservice.user.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 
+@Data
 @Entity
-@Table(name = "users")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
+@DynamicInsert
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Long id;
 
+    @Column(name = "social")
     private String social;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String name;
 
-    @Column(nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column
@@ -55,9 +56,10 @@ public class User {
         this.year = year;
     }
 
-    public User update(String name, String picture) {
+    public User update(String name, String picture, String social) {
         this.name = name;
         this.picture = picture;
+        this.social = social;
 
         return this;
     }
