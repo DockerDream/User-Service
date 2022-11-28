@@ -22,6 +22,7 @@ public class UserDto {
     private String picture;
     private Role role;
     private String token;
+    private String refreshToken;
     private String profile;
     private String field;
     private int year;
